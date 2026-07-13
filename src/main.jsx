@@ -9,13 +9,14 @@ import {
 } from "react-router-dom";
 import Layout from "./layout.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="/" element={<HomePage />} />
       <Route path="home" element={<HomePage />} />
-      <Route path="*" element={<h1>4O4 Page Not Found</h1>} />
+      <Route path="*" element={<NotFound />} />
     </Route>,
   ),
 );
