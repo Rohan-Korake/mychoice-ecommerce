@@ -8,7 +8,7 @@
 
 A modern, fast, and responsive e-commerce website built with **React**, **Vite**, and **Tailwind CSS**.
 
-🚧 **Currently under development**
+**Currently under development**
 
 </div>
 
