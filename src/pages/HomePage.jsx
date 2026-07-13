@@ -1,5 +1,4 @@
-import { ArrowRight, Sparkles, ShieldCheck, Truck, Gift } from "lucide-react";
-import React from "react";
+import { ArrowRight, Sparkles, ShieldCheck, Gift } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
