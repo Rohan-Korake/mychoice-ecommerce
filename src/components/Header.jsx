@@ -53,9 +53,9 @@ function Header() {
               <img
                 src={logo}
                 alt="MyChoice Logo"
-                className="h-12 w-12 object-contain"
+                className="h-10 w-10 lg:h-12 lg:w-12 object-contain"
               />
-              <h1 className="text-3xl font-bold font-serif tracking-wide text-[#DAC593]">
+              <h1 className="font-['Cormorant_Garamond'] text-2xl font-bold tracking-wide text-[#f3aa51]">
                 MyChoice
               </h1>
             </a>
@@ -102,18 +102,26 @@ function Header() {
                 width="w-10"
                 onClick={toggleTheme}
               />
-              <NavLink to={"/like"}>
-                <UtilityButton icon={Heart} width="w-10" />
-              </NavLink>
             </div>
 
-            {/* Mobile Hamburger */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 transition hover:bg-slate-100 lg:hidden dark:border-slate-700 dark:hover:bg-slate-800"
-            >
-              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+            <div className="flex  gap-1">
+              {/* Mobile Theme Button */}
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 transition hover:bg-slate-100 lg:hidden dark:border-slate-700 dark:hover:bg-slate-800">
+                <UtilityButton
+                  icon={themeIcon}
+                  width="flex-1"
+                  onClick={toggleTheme}
+                />
+              </div>
+
+              {/* Mobile Hamburger */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 transition hover:bg-slate-100 lg:hidden dark:border-slate-700 dark:hover:bg-slate-800"
+              >
+                {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Search */}
@@ -145,6 +153,7 @@ function Header() {
                   <li key={nav.name} className="w-full">
                     <NavLink
                       to={nav.path}
+                      onClick={() => setIsMenuOpen(false)}
                       className={({ isActive }) =>
                         `flex w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 border-1 ${
                           isActive
@@ -158,21 +167,6 @@ function Header() {
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-3 flex gap-2">
-                {/* Updated Mobile Theme Button */}
-                <UtilityButton
-                  icon={themeIcon}
-                  width="flex-1"
-                  onClick={toggleTheme}
-                />
-                <NavLink
-                  to={"/like"}
-                  className="flex h-10 flex-1 items-center justify-center rounded-xl border border-slate-300 dark:border-slate-700"
-                >
-                  <Heart size={18} />
-                </NavLink>
-              </div>
             </nav>
           </div>
         </div>
