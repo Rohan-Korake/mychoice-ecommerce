@@ -1,4 +1,4 @@
-import { Search, Menu, Sun, Moon, Heart, X } from "lucide-react";
+import { Search, Menu, Sun, Moon, X } from "lucide-react";
 import logo from "../assets/logo.svg";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";

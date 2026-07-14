@@ -6,7 +6,7 @@ function Layout() {
   return (
     <>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-[#09090B] text-white">
+      <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-zinc-950">
         <Header />
 
         <main className="min-h-screen">

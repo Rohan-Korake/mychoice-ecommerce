@@ -10,12 +10,14 @@ import {
 import Layout from "./layout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import ShopPage from "./pages/ShopPage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="/" element={<HomePage />} />
       <Route path="home" element={<HomePage />} />
+      <Route path="shop" element={<ShopPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>,
   ),

@@ -1,4 +1,3 @@
-import { Heart, ShoppingCart } from "lucide-react";
 import { newProductData } from "../data/newProducts.js";
 
 const NewProductCard = () => {
