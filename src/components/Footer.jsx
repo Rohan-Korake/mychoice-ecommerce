@@ -39,10 +39,9 @@ const Footer = () => {
   const navLinks = [
     { name: "Home", path: "/home" },
     { name: "Shop", path: "/shop" },
-    { name: "Categories", path: "/categories" },
-    { name: "Contact", path: "/contact" },
     { name: "Orders", path: "/orders" },
     { name: "Wishlist", path: "/wishlist" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (

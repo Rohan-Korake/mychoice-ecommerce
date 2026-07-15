@@ -1,6 +1,7 @@
 import { Heart, ShoppingCart } from "lucide-react";
 import { WHATSAPP_CONFIG } from "../constants/orderTemplates";
 import { sellers } from "../data/sellers.js";
+import { useState } from "react";
 
 const ProductCard = ({ productList }) => {
   // place order using whatsapp
@@ -26,8 +27,28 @@ const ProductCard = ({ productList }) => {
     window.open(whatsappUrl, "_blank");
   };
 
+  // monitor wishlist record
+  const [wishlist, setWishlist] = useState(() => {
+    return JSON.parse(localStorage.getItem("wishlist") || "[]");
+  });
+
+  // handle like button
+  const toggleLike = (product) => {
+    // Check if product already exists in wishlist by checking id
+    const isAlreadyLiked = wishlist.some((item) => item.id === product.id);
+
+    let newWishlist;
+    if (isAlreadyLiked) {
+      newWishlist = wishlist.filter((item) => item.id !== product.id);
+    } else {
+      newWishlist = [...wishlist, product];
+    }
+    setWishlist(newWishlist);
+    localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+  };
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
       {productList.map((item) => (
         <div
           key={item.id}
@@ -41,8 +62,19 @@ const ProductCard = ({ productList }) => {
               className="w-full h-full object-cover object-center"
             />
             {/* Positioned Heart Icon */}
-            <button className="absolute top-2 right-2 p-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-full text-zinc-600 dark:text-zinc-300 hover:text-red-500 transition-colors">
-              <Heart size={20} strokeWidth={1.5} />
+            <button
+              onClick={() => toggleLike(item)}
+              className="absolute top-2 right-2 p-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-full text-zinc-600 dark:text-zinc-300 hover:text-red-500 transition-colors"
+            >
+              <Heart
+                size={20}
+                strokeWidth={1.5}
+                className={
+                  wishlist.some((w) => w.id === item.id)
+                    ? "fill-red-500 text-red-500"
+                    : ""
+                }
+              />
             </button>
           </div>
 

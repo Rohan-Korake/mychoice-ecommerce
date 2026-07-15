@@ -35,6 +35,30 @@ export const Jewellery = [
 
 export const Bangles = [
   {
+    id: "ban_5",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Bangles/ban_05.webp",
+    name: "Emerald Silk",
+    desc: "leek green silk-threaded design for a graceful look.",
+    price: "120/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "ban_4",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Bangles/ban_04.webp",
+    name: "Pearl Classic",
+    desc: "Timeless multi-row pearls for sophisticated ethnic elegance.",
+    price: "150/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "ban_3",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Bangles/ban_03.webp",
+    name: "Crimson Blooms",
+    desc: "Vibrant red silk with floral accents for festive styling.",
+    price: "140/-",
+    sellerId: "seller_01",
+  },
+  {
     id: "ban_2",
     img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Bangles/ban_02.webp",
     name: "Red Bangles",

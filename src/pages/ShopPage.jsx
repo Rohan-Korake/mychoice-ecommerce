@@ -57,7 +57,7 @@ const ShopPage = () => {
           </section>
 
           {/* HandMade Jewellery */}
-          <section id="jewellery" className="py-6 scroll-mt-32 lg:scroll-mt-24">
+          <section id="jewellery" className="py-1 scroll-mt-32 lg:scroll-mt-24">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
               HandMade Jewellery
             </h2>

@@ -11,8 +11,8 @@ export const newProductData = [
   },
   {
     id: Date.now() + 2,
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/Maang%20Tikka?updatedAt=1784017742678",
-    name: "Maang Tikka",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Bangles/ban_03.webp",
+    name: "Crimson Blooms",
   },
   {
     id: Date.now() + 3,
