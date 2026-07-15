@@ -41,6 +41,8 @@ const Footer = () => {
     { name: "Shop", path: "/shop" },
     { name: "Categories", path: "/categories" },
     { name: "Contact", path: "/contact" },
+    { name: "Orders", path: "/orders" },
+    { name: "Wishlist", path: "/wishlist" },
   ];
 
   return (

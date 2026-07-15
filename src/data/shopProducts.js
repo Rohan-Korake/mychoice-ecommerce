@@ -3,15 +3,17 @@ export const Jewellery = [
     id: "jew_4",
     img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_04?updatedAt=1784051461930",
     name: "Mangalsutra",
-    desc: "Classic traditional style for daily wear.",
+    desc: "Classic traditional style for elegant daily wear.",
     price: "200/-",
+    sellerId: "seller_02",
   },
   {
     id: "jew_3",
     img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_03?updatedAt=1784051435499",
     name: "Nose Ornament",
-    desc: "Delicate piece for a charming touch.",
+    desc: "Delicate handcrafted piece, refined look.",
     price: "90/-",
+    sellerId: "seller_01",
   },
   {
     id: "jew_2",
@@ -19,6 +21,7 @@ export const Jewellery = [
     name: "Lotus Necklace",
     desc: "Elegant lotus-inspired design for ethnic wear.",
     price: "300/-",
+    sellerId: "seller_01",
   },
   {
     id: "jew_1",
@@ -26,6 +29,7 @@ export const Jewellery = [
     name: "Maang Tikka",
     desc: "Lightweight and stylish for festive comfort.",
     price: "60/-",
+    sellerId: "seller_01",
   },
 ];
 
@@ -36,6 +40,7 @@ export const Bangles = [
     name: "Red Bangles",
     desc: "Classic, durable, versatile style.",
     price: "80/-",
+    sellerId: "seller_01",
   },
   {
     id: "ban_1",
@@ -43,6 +48,7 @@ export const Bangles = [
     name: "Pink Bangles",
     desc: "Elegant, durable, traditional design.",
     price: "80/-",
+    sellerId: "seller_01",
   },
 ];
 
@@ -53,5 +59,6 @@ export const Purse = [
     name: "Pink Purse",
     desc: "Handcrafted bohemian macrame.",
     price: "500/-",
+    sellerId: "seller_01",
   },
 ];
