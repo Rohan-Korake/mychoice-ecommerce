@@ -13,6 +13,8 @@ import NotFound from "./pages/NotFound.jsx";
 import ShopPage from "./pages/ShopPage.jsx";
 import OrdersPage from "./pages/OrdersPage.jsx";
 import { getData } from "./utils/orderUtils.js";
+import WishListPage from "./pages/WishListPage.jsx";
+import { getWishList } from "./utils/wishlistUtils.js";
 
 // routes
 const router = createBrowserRouter(
@@ -22,6 +24,7 @@ const router = createBrowserRouter(
       <Route path="home" element={<HomePage />} />
       <Route path="shop" element={<ShopPage />} />
       <Route loader={getData} path="orders" element={<OrdersPage />} />
+      <Route loader={getWishList} path="wishlist" element={<WishListPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>,
   ),

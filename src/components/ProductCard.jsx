@@ -2,7 +2,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { placeOrder } from "../utils/orderUtils.js";
 
-const ProductCard = ({ productList }) => {
+const ProductCard = ({ productList, onWishlistChange }) => {
   // place order using whatsapp (wa.me)
   const handleOrderClick = (item) => {
     placeOrder(item);
@@ -26,6 +26,7 @@ const ProductCard = ({ productList }) => {
     }
     setWishlist(newWishlist);
     localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+    onWishlistChange?.(newWishlist);
   };
 
   return (
@@ -36,7 +37,7 @@ const ProductCard = ({ productList }) => {
           className="flex flex-col bg-white dark:bg-zinc-900 rounded-xl overflow-hidden shadow-sm border border-zinc-200 dark:border-zinc-800 transition-transform hover:scale-[1.02]"
         >
           {/* Image Container */}
-          <div className="relative aspect-[3/4] w-full overflow-hidden">
+          <div className="relative aspect-3/4 w-full overflow-hidden">
             <img
               src={item.img}
               alt={item.name}
@@ -59,7 +60,7 @@ const ProductCard = ({ productList }) => {
             </button>
           </div>
 
-          <div className="p-3 flex flex-col flex-grow">
+          <div className="p-3 flex flex-col grow">
             <h3 className="text-sm md:text-base font-semibold text-zinc-900 dark:text-white truncate">
               {item.name}
             </h3>
