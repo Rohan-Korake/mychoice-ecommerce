@@ -1,30 +1,11 @@
 import { Heart, ShoppingCart } from "lucide-react";
-import { WHATSAPP_CONFIG } from "../constants/orderTemplates";
-import { sellers } from "../data/sellers.js";
 import { useState } from "react";
+import { placeOrder } from "../utils/orderUtils.js";
 
 const ProductCard = ({ productList }) => {
-  // place order using whatsapp
+  // place order using whatsapp (wa.me)
   const handleOrderClick = (item) => {
-    const seller = sellers[item.sellerId];
-    const message = WHATSAPP_CONFIG.MESSAGE_TEMPLATE(item);
-
-    // record the order product
-    const orderRecord = {
-      ...item,
-      timestamp: new Date().toLocaleString(),
-    };
-
-    // get the old order records
-    const existingOrders = JSON.parse(
-      localStorage.getItem("userOrders") || "[]",
-    );
-    // add current order record and save
-    existingOrders.push(orderRecord);
-    localStorage.setItem("userOrders", JSON.stringify(existingOrders));
-
-    const whatsappUrl = `https://wa.me/${seller.phone}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    placeOrder(item);
   };
 
   // monitor wishlist record

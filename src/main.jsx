@@ -11,7 +11,8 @@ import Layout from "./layout.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import ShopPage from "./pages/ShopPage.jsx";
-import { fetchData, OrdersPage } from "./pages/OrdersPage.jsx";
+import OrdersPage from "./pages/OrdersPage.jsx";
+import { getData } from "./utils/orderUtils.js";
 
 // routes
 const router = createBrowserRouter(
@@ -20,7 +21,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<HomePage />} />
       <Route path="home" element={<HomePage />} />
       <Route path="shop" element={<ShopPage />} />
-      <Route loader={fetchData} path="orders" element={<OrdersPage />} />
+      <Route loader={getData} path="orders" element={<OrdersPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>,
   ),

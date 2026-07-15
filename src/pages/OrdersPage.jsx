@@ -1,103 +1,122 @@
-import React from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
-import { Repeat, Trash2 } from "lucide-react";
+import { Repeat, ShoppingCart, Trash2 } from "lucide-react";
+import { placeOrder } from "../utils/orderUtils";
 
 const OrdersPage = () => {
-  const orderRecords = useLoaderData();
+  const initialOrders = useLoaderData();
+  const [orderRecords, setOrderRecords] = useState(initialOrders);
+
+  //   handle delete record
   const handleDelete = (id) => {
-    console.log("Delete order:", id);
-    // Add your delete logic here (filter state or update localStorage)
+    const savedRecords = JSON.parse(localStorage.getItem("userOrders") || "[]");
+    const updatedRecords = savedRecords.filter((record) => record.id !== id);
+    localStorage.setItem("userOrders", JSON.stringify(updatedRecords));
+    setOrderRecords(updatedRecords);
   };
 
-  const handleReorder = (order) => {
-    console.log("Reorder:", order.name);
-    // Add your reorder logic here (e.g., add back to cart)
+  // handle reorder product
+  const handleReorder = (item) => {
+    placeOrder(item);
+    const updatedRecords = JSON.parse(
+      localStorage.getItem("userOrders") || "[]",
+    );
+    setOrderRecords(updatedRecords);
   };
 
   return (
-    <section className="bg-slate-50 dark:bg-zinc-950 min-h-screen">
-      <div className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-8">
-        <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
+    <section className="min-h-screen bg-slate-50 dark:bg-zinc-950">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h2 className="mb-8 text-3xl font-bold text-zinc-900 dark:text-white">
           Your Orders
         </h2>
 
         {orderRecords.length === 0 ? (
-          <p className="text-zinc-500">No orders found.</p>
-        ) : (
-          orderRecords.map((order) => (
-            <div
-              key={order.id}
-              className="group flex flex-col sm:flex-row gap-5 p-5 bg-white dark:bg-[#121212] border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300"
+          <div className="flex flex-col items-center justify-center py-20 px-4 text-center border-2 border-dashed border-zinc-800 rounded-2xl bg-zinc-900/50">
+            {/* Add a subtle icon here, e.g., <ShoppingBag size={48} className="text-zinc-600 mb-4" /> */}
+            <h3 className="text-xl font-semibold text-white mb-2">
+              Your order list is empty
+            </h3>
+            <p className="text-zinc-400 max-w-sm mb-6">
+              Looks like you haven't placed any orders yet. Explore our
+              handcrafted collection and find something you love!
+            </p>
+            <a
+              href="/shop"
+              className="inline-flex items-center gap-2 bg-[#C97C5D] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#b56c4d] transition-all"
             >
-              {/* Professional Image Container: Forced 1:1 Aspect Ratio */}
-              <div className="w-full sm:w-32 flex-shrink-0">
-                <div className="aspect-square w-full overflow-hidden rounded-xl border border-zinc-100 dark:border-zinc-700">
+              <ShoppingCart size={18} />
+              Start Shopping
+            </a>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 p-4 lg:p-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 lg:gap-8">
+            {orderRecords.map((order) => (
+              <div
+                key={order.id}
+                className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                {/* Image (Now clean, without absolute badge) */}
+                <div className="relative aspect-[3/4] overflow-hidden">
                   <img
                     src={order.img}
                     alt={order.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>
-              </div>
 
-              {/* Order Details Area */}
-              <div className="flex flex-col justify-between flex-1 w-full">
-                <div>
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                {/* Content */}
+                <div className="space-y-4 p-4">
+                  <div>
+                    <h3 className="line-clamp-1 text-lg font-semibold text-zinc-900 dark:text-white">
                       {order.name}
                     </h3>
-                    <span className="text-[11px] font-medium text-zinc-400 uppercase tracking-wider hidden sm:block">
-                      {order.timestamp.split(",")[0]}
+                    <p className="mt-2 line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">
+                      {order.desc}
+                    </p>
+
+                    {/* Moved Date and Time here */}
+                    <div className="mt-3 flex items-center text-xs text-zinc-500 dark:text-zinc-500">
+                      <span className="font-medium">Ordered on:</span>
+                      <span className="ml-1">{order.timestamp}</span>
+                    </div>
+                  </div>
+
+                  {/* Price */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-[#C97C5D]">
+                      ₹{String(order.price).replace(/[₹/-]/g, "")}
                     </span>
                   </div>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1 line-clamp-2">
-                    {order.desc}
-                  </p>
-                </div>
 
-                {/* Price & Unified Action Buttons Row */}
-                <div className="flex items-center justify-between mt-5">
-                  <span className="text-xl font-bold text-zinc-900 dark:text-white">
-                    {order.price}
-                  </span>
-
+                  {/* Buttons */}
                   <div className="flex gap-2">
-                    {/* Unified Button Style: Reorder */}
                     <button
                       onClick={() => handleReorder(order)}
-                      className="flex items-center gap-2 px-4 py-2 bg-[#C97C5D] text-white rounded-lg text-sm font-semibold hover:bg-[#b56e52] transition-colors"
+                      className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#C97C5D] px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-[#b66d52]"
                     >
-                      <Repeat size={16} />
+                      <Repeat size={18} />
                       Reorder
                     </button>
 
-                    {/* Unified Button Style: Delete */}
                     <button
                       onClick={() => handleDelete(order.id)}
-                      className="flex items-center gap-2 px-4 py-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-lg text-sm font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+                      className="flex items-center justify-center rounded-xl border border-zinc-300 px-4 transition hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
                     >
-                      <Trash2 size={16} />
-                      Delete
+                      <Trash2
+                        size={18}
+                        className="text-zinc-700 dark:text-zinc-300"
+                      />
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
-          ))
+            ))}
+          </div>
         )}
       </div>
     </section>
   );
 };
 
-const fetchData = async () => {
-  const orderRecords = await JSON.parse(
-    localStorage.getItem("userOrders") || "[]",
-  );
-
-  return orderRecords;
-};
-
-export { OrdersPage, fetchData };
+export default OrdersPage;
