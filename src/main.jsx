@@ -15,6 +15,7 @@ import OrdersPage from "./pages/OrdersPage.jsx";
 import { getData } from "./utils/orderUtils.js";
 import WishListPage from "./pages/WishListPage.jsx";
 import { getWishList } from "./utils/wishlistUtils.js";
+import ContactPage from "./pages/ContactPage.jsx";
 
 // routes
 const router = createBrowserRouter(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
       <Route path="shop" element={<ShopPage />} />
       <Route loader={getData} path="orders" element={<OrdersPage />} />
       <Route loader={getWishList} path="wishlist" element={<WishListPage />} />
+      <Route path="contact" element={<ContactPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>,
   ),
