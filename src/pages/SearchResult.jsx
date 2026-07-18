@@ -1,7 +1,14 @@
 import { useSearch } from "../utils/useSearch";
 import ProductCard from "../components/ProductCard";
 import { useSearchParams } from "react-router-dom";
-import { Jewellery, Bangles, Purse } from "../data/shopProducts";
+import {
+  Jewellery,
+  Bangles,
+  Purse,
+  Necklace,
+  Mangalsutra,
+  JewellerySet,
+} from "../data/shopProducts";
 
 const SearchResult = () => {
   // handle search operation
@@ -13,6 +20,9 @@ const SearchResult = () => {
     Jewellery: Jewellery,
     Bangles: Bangles,
     Purse: Purse,
+    Necklace: Necklace,
+    "Jewellery Set": JewellerySet,
+    Mangalsutra: Mangalsutra,
   };
 
   const selectedProductList = productDataMap[query] || [];

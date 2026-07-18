@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Jewellery, Bangles, Purse } from "../data/shopProducts";
+import {
+  Jewellery,
+  Bangles,
+  Purse,
+  Necklace,
+  Mangalsutra,
+  JewellerySet,
+} from "../data/shopProducts";
 import ProductCard from "../components/ProductCard";
 import SectionButton from "../components/SectionButton";
 import { ArrowUp } from "lucide-react";
@@ -18,6 +25,21 @@ const ShopPage = () => {
     },
     {
       id: 103,
+      targetId: "#necklace",
+      label: "Necklace",
+    },
+    {
+      id: 104,
+      targetId: "#mangalsutra",
+      label: "Mangalsutra",
+    },
+    {
+      id: 105,
+      targetId: "#jewellerySet",
+      label: "Jewellery Set",
+    },
+    {
+      id: 106,
       targetId: "#purse",
       label: "Purse",
     },
@@ -56,26 +78,56 @@ const ShopPage = () => {
             <SectionButton sectionList={sectionButtons} />
           </section>
 
-          {/* HandMade Jewellery */}
+          {/* Jewellery */}
           <section id="jewellery" className="py-6 scroll-mt-32 lg:scroll-mt-24">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
-              HandMade Jewellery
+              Jewellery Collection
             </h2>
             <ProductCard productList={Jewellery} />
           </section>
 
-          {/* HandMade Bangles */}
+          {/* Jewellery Set */}
+          <section
+            id="jewellerySet"
+            className="py-6 scroll-mt-32 lg:scroll-mt-24"
+          >
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
+              Jewellery Set
+            </h2>
+            <ProductCard productList={JewellerySet} />
+          </section>
+
+          {/* Jewellery */}
+          <section id="necklace" className="py-6 scroll-mt-32 lg:scroll-mt-24">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
+              Necklaces
+            </h2>
+            <ProductCard productList={Necklace} />
+          </section>
+
+          {/* Jewellery */}
+          <section
+            id="mangalsutra"
+            className="py-6 scroll-mt-32 lg:scroll-mt-24"
+          >
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
+              Mangalsutra
+            </h2>
+            <ProductCard productList={Mangalsutra} />
+          </section>
+
+          {/* Bangles */}
           <section id="bangles" className="py-6 scroll-mt-32 lg:scroll-mt-24">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
-              HandMade Bangles
+              Bangles
             </h2>
             <ProductCard productList={Bangles} />
           </section>
 
-          {/* HandMade Purse */}
+          {/* Purse */}
           <section id="purse" className="py-6 scroll-mt-32 lg:scroll-mt-24">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6">
-              HandMade Purse
+              Purse
             </h2>
             <ProductCard productList={Purse} />
           </section>

@@ -4,7 +4,7 @@ const SectionButton = ({ sectionList }) => {
   const [activeButton, setActive] = useState("");
 
   return (
-    <div className="flex flex-wrap gap-3 justify-center py-6">
+    <div className="flex flex-wrap gap-3 justify-start py-6">
       {sectionList.map((section) => (
         <a
           key={section.id}
