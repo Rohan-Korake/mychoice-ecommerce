@@ -15,6 +15,7 @@ export default defineConfig({
         description:
           "Discover our latest handcrafted creations, made with love and designed to add elegance to every moment.",
         theme_color: "#C97C5D",
+        background_color: "#000000",
         display: "standalone",
         scope: "/",
         start_url: "/",
