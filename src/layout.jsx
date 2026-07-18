@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { useEffect, useState } from "react";
 import logo from "../src/assets/logo.svg";
+import ReloadPrompt from "./components/ReloadPrompt";
 
 function Layout() {
   const [loading, setLoading] = useState(true);
@@ -57,6 +58,7 @@ function Layout() {
 
   return (
     <>
+      <ReloadPrompt />
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-zinc-950">
         <Header />

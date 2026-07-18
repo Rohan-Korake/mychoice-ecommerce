@@ -1,7 +1,7 @@
 export const Jewellery = [
   {
     id: "jew_4",
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_04?updatedAt=1784051461930",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_04?updatedAt=1784051560337",
     name: "Mangalsutra",
     desc: "Classic traditional style for elegant daily wear.",
     price: "200/-",

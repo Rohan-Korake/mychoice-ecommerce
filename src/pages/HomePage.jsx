@@ -1,6 +1,7 @@
 import { ArrowRight, Sparkles, ShieldCheck, Gift, Gem } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import NewProductCard from "../components/NewProductCard";
+import landingImage from "../assets/landing.svg";
 
 const HomePage = () => {
   return (
@@ -57,7 +58,7 @@ const HomePage = () => {
           <div className="flex flex-1 justify-center">
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-zinc-900">
               <img
-                src="./src/assets/landing.svg"
+                src={landingImage}
                 alt="Handmade Aari Work"
                 className="h-full w-full object-cover"
               />
