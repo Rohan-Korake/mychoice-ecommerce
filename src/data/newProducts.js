@@ -1,7 +1,7 @@
 export const newProductData = [
   {
     id: Date.now(),
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/Mangalsutra?updatedAt=1784017659845",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_04?updatedAt=1784051435499",
     name: "Mangalsutra",
   },
   {
