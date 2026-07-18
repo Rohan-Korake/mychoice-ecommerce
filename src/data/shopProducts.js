@@ -19,6 +19,62 @@ export const Jewellery = [
 
 export const Necklace = [
   {
+    id: "nec_12",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_12.webp",
+    name: "Petal Radiance",
+    desc: "Dainty ruby and pearl set with a charming floral design.",
+    price: "430/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "nec_11",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_11.webp?updatedAt=1784371780785",
+    name: "Lotus Bloom Set",
+    desc: "Elegant lotus-themed jewelry set with floral accents.",
+    price: "420/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "nec_10",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_10.webp?updatedAt=1784371618151",
+    name: "Flora Grace",
+    desc: "Charming floral necklace and earring jewelry set.",
+    price: "450/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "nec_09",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_09.webp?updatedAt=1784371278372",
+    name: "Royal Beads",
+    desc: "Traditional multi-layer pearl set with rich accents",
+    price: "440/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "nec_08",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_08.webp",
+    name: "Pearl Royale",
+    desc: "Classic multi-strand pearl set with ornate pendants.",
+    price: "460/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "nec_07",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_07.webp?updatedAt=1784369584159",
+    name: "Mayura",
+    desc: "Elegant Mayura Peacock Pendant with Black Bead Chain.",
+    price: "440/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "nec_06",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_06.webp?updatedAt=1784369584008",
+    name: "Petal Charm",
+    desc: "Divine Peacock Teardrop Pendant on Minimalist Chain.",
+    price: "460/-",
+    sellerId: "seller_01",
+  },
+  {
     id: "nec_05",
     img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_05.webp",
     name: "Peacock Grace Set",
@@ -44,7 +100,7 @@ export const Necklace = [
   },
   {
     id: "nec_02",
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nec_02.webp",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_02.webp?updatedAt=1784372570206",
     name: "Royal Petal",
     desc: "Handcrafted pearl daisy set with a radiant ruby finish",
     price: "400/-",
@@ -52,7 +108,7 @@ export const Necklace = [
   },
   {
     id: "nec_01",
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_02?updatedAt=1784051406908",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_01?updatedAt=1784372555901",
     name: "Lotus Necklace",
     desc: "Elegant lotus-inspired design for ethnic wear.",
     price: "250/-",
@@ -61,6 +117,22 @@ export const Necklace = [
 ];
 
 export const Mangalsutra = [
+  {
+    id: "man_06",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Mangalsutra/man_06.webp?updatedAt=1784372042894",
+    name: "Azure Pearl",
+    desc: "Long black bead chain with three pendants and matching earrings",
+    price: "230/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "man_05",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Mangalsutra/man_05.webp?updatedAt=1784369605312",
+    name: "Mayura Gold",
+    desc: "Traditional gold mangalsutra with a modern peacock design",
+    price: "240/-",
+    sellerId: "seller_01",
+  },
   {
     id: "man_04",
     img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Mangalsutra/man_04.webp",
@@ -87,7 +159,7 @@ export const Mangalsutra = [
   },
   {
     id: "man_01",
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_04.png",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Mangalsutra/man_01?updatedAt=1784372245307",
     name: "Floral Essence",
     desc: "Classic traditional style for elegant daily wear.",
     price: "250/-",
@@ -97,19 +169,35 @@ export const Mangalsutra = [
 
 export const JewellerySet = [
   {
+    id: "js_04",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/JewellerySet/js_04.webp",
+    name: "Moon Bloom",
+    desc: "Gold crescent moon jewelry set with green stones.",
+    price: "600/-",
+    sellerId: "seller_01",
+  },
+  {
+    id: "js_03",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/JewellerySet/js_03.webp?updatedAt=1784369626459",
+    name: "Royal Flower Suite",
+    desc: "Elegant pearl set featuring green stone floral accents",
+    price: "630/-",
+    sellerId: "seller_01",
+  },
+  {
     id: "js_02",
     img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/JewellerySet/js_02.webp",
-    name: "Royal Flower Suite",
+    name: "Flower Suite",
     desc: "Pearl floral set with rich green accents, for grandeur.",
-    price: "600/-",
+    price: "599/-",
     sellerId: "seller_01",
   },
   {
     id: "js_01",
     img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/JewellerySet/js_01.webp",
     name: "Emerald Bloom Set",
-    desc: "Pearl floral set with rich green accents, for grandeur.",
-    price: "600/-",
+    desc: "Pearl floral set with rich grey accents, for grandeur.",
+    price: "660/-",
     sellerId: "seller_01",
   },
 ];

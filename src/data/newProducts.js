@@ -1,12 +1,12 @@
 export const newProductData = [
   {
     id: Date.now(),
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/jew_04?updatedAt=1784051435499",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Mangalsutra/man_01?updatedAt=1784372245307",
     name: "Mangalsutra",
   },
   {
     id: Date.now() + 1,
-    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/jewellery/Lotus%20Necklace?updatedAt=1784017697206",
+    img: "https://ik.imagekit.io/ik0myx9mu/MyChoice/Necklace/nac_01?updatedAt=1784372555901",
     name: "Lotus Necklace",
   },
   {
